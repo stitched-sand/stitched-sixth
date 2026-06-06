@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Art Vault</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&family=Oxanium:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/3827e77d31.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container nav__container">
+          <div class="logo">
+            <a href="index.html">
+              <i class="fa-solid fa-paintbrush logo__icon"></i>
+              <span class="logo__text">ArtVault</span>
+            </a>
+          </div>
+          <ul class="nav__links">
+            <li><a href="#" class="nav__link">Home</a></li>
+            <li><a href="browse.html" class="nav__link">Browse Collection</a></li>
+            <li>
+              <a href="#" class="nav__link nav__link--primary">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="landing">
+        <div class="container">
+          <div class="header__description">
+            <h1 class="header__title">Unlock over 400,000 works of art</h1>
+            <p class="header__subtitle">
+              Search artists, paintings, sculptures and artifacts from the Met
+              Museum Collection on <span class="purple">ArtVault</span>.
+            </p>
+            <div class="search">
+              <div class="search__wrapper">
+                <form class="search__form" action="/search" method="GET">
+                  <input
+                    type="text"
+                    class="search__input"
+                    id="site-search"
+                    name="q"
+                    placeholder="Search artist, object, medium, period..."
+                  />
+                  <span class="search__cursor"></span>
+                   <button class="search__button" type="submit">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                </form>
+               
+              </div>
+              <p class="search__status">
+                <span class="status__text">READY</span>
+              </p>
+            </div>
+          </div>
+
+          <figure class="header__img--wrapper">
+            <img src="./assets/museum.svg" alt="Art Museum" />
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="container">
+        
+          <div class="logo">
+            <a href="index.html">
+              <i class="fa-solid fa-paintbrush logo__icon"></i>
+              <span class="logo__text">ArtVault</span>
+            </a>
+          </div>
+
+          <div class="footer__list">
+            <a href="#" class="footer__link">Home</a>
+            <a href="#" class="footer__link no-cursor">Browse Collection</a>
+
+            <a href="#" class="footer__link no-cursor">Contact</a>
+          </div>
+          <div class="footer__copyright">Copyright &copy; 2026 ArtVault</div>
+        
+      </div>
+    </footer>
+  </body>
+</html>
