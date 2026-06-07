@@ -37,15 +37,35 @@ function stopLoadingAnimation(text) {
     statusText.textContent = text;
 }
 
+function renderSkeletons() {
+    const skeletons = Array(6)
+        .fill(0)
+        .map(() => {
+            return `
+                <div class="artwork skeleton">
+                    <div class="skeleton__img"></div>
+
+                    <div class="artwork__info">
+                        <div class="skeleton__text"></div>
+                        <div class="skeleton__text short"></div>
+                        <div class="skeleton__text shorter"></div>
+                    </div>
+                </div>
+            `;
+        })
+        .join("");
+
+    artworksContainer.innerHTML = skeletons;
+}
 /* ---------------------------
    RENDER FUNCTION
 ---------------------------- */
 
 function renderArtworks(artworks) {
-    const html = artworks.map(artwork => {
+    const html = artworks.map((artwork, index) => {
         return `
-            <div class="artwork">
-                <img 
+            <div class="artwork" style="animation-delay:${index * 80}ms">
+                <img
                     src="${artwork.primaryImageSmall}"
                     alt="${artwork.title}"
                     class="artwork__img"
@@ -69,7 +89,7 @@ function renderArtworks(artworks) {
 async function searchArtworks(query) {
     if (!query) return;
 
-    artworksContainer.innerHTML = "";
+    renderSkeletons();
     startLoadingAnimation();
 
     try {
@@ -163,5 +183,7 @@ form.addEventListener("submit", function (e) {
 ---------------------------- */
 
 if (initialQuery) {
+    document.querySelector("#site-search").value = initialQuery;
+
     searchArtworks(initialQuery);
 }
